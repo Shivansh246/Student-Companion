@@ -1,0 +1,305 @@
+/*Google Font*/
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+
+/*CSS Variables*/
+
+:root {
+    /* Colors */
+
+    --color-primary: #2563eb;
+    --color-primary-hover: #1d4ed8;
+
+    --color-background: #f4f7fc;
+    --color-surface: #ffffff;
+
+    --color-text: #1f2937;
+    --color-text-light: #6b7280;
+
+    --color-border: #e5e7eb;
+
+    --color-success: #22c55e;
+    --color-warning: #f59e0b;
+    --color-danger: #ef4444;
+
+
+    /* Sidebar */
+
+    --sidebar-width: 260px;
+
+
+    /* Navbar */
+
+    --navbar-height: 72px;
+
+
+    /* Border Radius */
+
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 18px;
+
+
+    /* Shadow */
+
+    --shadow-sm: 0 2px 6px rgba(0,0,0,0.08);
+
+}
+
+
+/* q
+Reset*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+html{
+    font-size:16px;
+}
+
+
+body{
+
+    font-family:"Inter",sans-serif;
+
+    background:var(--color-background);
+
+    color:var(--color-text);
+
+}
+
+
+/* ===========================
+   Links
+=========================== */
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+
+/* ===========================
+   Lists
+=========================== */
+
+ul{
+
+    list-style:none;
+
+}
+
+
+/* ===========================
+   Buttons
+=========================== */
+
+button{
+
+    font-family:inherit;
+
+    cursor:pointer;
+
+    border:none;
+
+}
+
+
+/* ===========================
+   Images
+=========================== */
+
+img{
+
+    max-width:100%;
+
+    display:block;
+
+}
+
+
+/* ===========================
+   Layout
+=========================== */
+
+.app-layout{
+
+    display:flex;
+
+    min-height:100vh;
+
+}
+
+
+/* ===========================
+   Sidebar
+=========================== */
+
+.sidebar{
+
+    width:var(--sidebar-width);
+
+    background:var(--color-surface);
+
+    border-right:1px solid var(--color-border);
+
+    padding:24px 18px;
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+
+.sidebar-logo{
+
+    margin-bottom:40px;
+
+}
+
+
+.sidebar-logo h2{
+
+    color:var(--color-primary);
+
+    font-size:1.5rem;
+
+}
+
+
+/* ===========================
+   Navigation
+=========================== */
+
+.sidebar-nav{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+}
+
+
+.nav-link{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:14px 16px;
+
+    border-radius:var(--radius-md);
+
+    color:var(--color-text-light);
+
+    font-weight:500;
+
+    transition:0.25s;
+
+}
+
+
+.nav-link:hover{
+
+    background:#eef4ff;
+
+    color:var(--color-primary);
+
+}
+
+
+.active-link{
+
+    background:var(--color-primary);
+
+    color:white;
+
+}
+
+
+.nav-icon{
+
+    font-size:1.1rem;
+
+}
+
+
+/* ===========================
+   Main Content
+=========================== */
+
+.main-content{
+
+    flex:1;
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+
+/* ===========================
+   Navbar
+=========================== */
+
+.navbar{
+
+    height:var(--navbar-height);
+
+    background:var(--color-surface);
+
+    border-bottom:1px solid var(--color-border);
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0 30px;
+
+}
+
+
+.page-title{
+
+    font-size:1.5rem;
+
+    font-weight:700;
+
+}
+
+
+.current-date{
+
+    color:var(--color-text-light);
+
+    font-weight:500;
+
+}
+
+
+/* ===========================
+   Page Content
+=========================== */
+
+.page-content{
+
+    flex:1;
+
+    padding:30px;
+
+}
