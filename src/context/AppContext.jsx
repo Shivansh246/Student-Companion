@@ -7,14 +7,16 @@ const AppContext = createContext();
 
 export function AppProvider({ children }) {
   const [appData, dispatch] = useReducer(
-  rootReducer,
-  undefined,
-  () => loadData() ?? initialState
-);
+    rootReducer,
+    undefined,
+    () => loadData() ?? initialState
+  );
 
   useEffect(() => {
     saveData(appData);
   }, [appData]);
+
+  // ---------------- Tasks ----------------
 
   const addTask = (title) => {
     dispatch({
@@ -41,32 +43,88 @@ export function AppProvider({ children }) {
       payload: id,
     });
   };
-  const updateTask = (task) => {
-  dispatch({
-    type: "UPDATE_TASK",
-    payload: task,
-  });
-};
 
-const resetAppData = () => {
-  dispatch({
-    type: "RESET_APP",
-  });
-};
+  const updateTask = (task) => {
+    dispatch({
+      type: "UPDATE_TASK",
+      payload: task,
+    });
+  };
+
+  // ---------------- Planner ----------------
+
+  const addGoal = (category, title) => {
+    dispatch({
+      type: "ADD_GOAL",
+      payload: {
+        category,
+        goal: {
+          id: crypto.randomUUID(),
+          title,
+          completed: false,
+          createdAt: new Date().toISOString(),
+        },
+      },
+    });
+  };
+
+  const updateGoal = (category, goal) => {
+    dispatch({
+      type: "UPDATE_GOAL",
+      payload: {
+        category,
+        goal,
+      },
+    });
+  };
+
+  const toggleGoal = (category, id) => {
+    dispatch({
+      type: "TOGGLE_GOAL",
+      payload: {
+        category,
+        id,
+      },
+    });
+  };
+
+  const deleteGoal = (category, id) => {
+    dispatch({
+      type: "DELETE_GOAL",
+      payload: {
+        category,
+        id,
+      },
+    });
+  };
+
+  // ---------------- Settings ----------------
+
+  const resetAppData = () => {
+    dispatch({
+      type: "RESET_APP",
+    });
+  };
 
   return (
-   <AppContext.Provider
-  value={{
-    appData,
-    dispatch,
+    <AppContext.Provider
+      value={{
+        appData,
+        dispatch,
 
-    addTask,
-    updateTask,
-    toggleTask,
-    deleteTask,
-    resetAppData,
-  }}
->
+        addTask,
+        updateTask,
+        toggleTask,
+        deleteTask,
+
+        addGoal,
+        updateGoal,
+        toggleGoal,
+        deleteGoal,
+
+        resetAppData,
+      }}
+    >
       {children}
     </AppContext.Provider>
   );

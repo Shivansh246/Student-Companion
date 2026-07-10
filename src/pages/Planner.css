@@ -1,0 +1,15 @@
+.planner-page {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.planner-page h1 {
+  margin-bottom: 0.5rem;
+}
+
+.planner-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  gap: 1.5rem;
+}

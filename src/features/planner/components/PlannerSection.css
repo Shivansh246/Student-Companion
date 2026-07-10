@@ -1,0 +1,35 @@
+.planner-section {
+  background: var(--surface-color);
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.planner-section h2 {
+  margin-bottom: 16px;
+}
+
+.planner-input {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.planner-input input {
+  flex: 1;
+}
+
+.planner-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.planner-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.planner-title {
+  flex: 1;
+}
