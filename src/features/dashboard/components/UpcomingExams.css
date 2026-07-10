@@ -1,0 +1,31 @@
+.dashboard-widget {
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.dashboard-widget h2 {
+  margin-bottom: 1rem;
+}
+
+.widget-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.widget-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.widget-list li:last-child {
+  border-bottom: none;
+}
+
+.empty-state {
+  color: var(--text-secondary);
+}

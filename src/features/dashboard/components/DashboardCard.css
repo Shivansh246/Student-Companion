@@ -1,0 +1,25 @@
+.dashboard-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.dashboard-card__content h3 {
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.dashboard-card__content p {
+  font-size: 2rem;
+  font-weight: 700;
+}

@@ -1,5 +1,5 @@
-import TaskForm from "../components/tasks/TaskForm";
-import TaskList from "../components/tasks/TaskList";
+import TaskForm from "../features/tasks/components/TaskForm";
+import TaskList from "../features/tasks/components/TaskList";
 
 function DailyTasks() {
   return (

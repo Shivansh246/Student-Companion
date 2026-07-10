@@ -1,7 +1,7 @@
 import { useState } from "react";
-import useAppContext from "../../hooks/useAppContext";
-import Input from "../ui/Input";
-import Button from "../ui/Button";
+import useAppContext from "../../../hooks/useAppContext.js";
+import Input from "../../../components/ui/Input.jsx";
+import Button from "../../../components/ui/Button.jsx";
 
 function TaskForm() {
   const [title, setTitle] = useState("");

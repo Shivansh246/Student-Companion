@@ -1,64 +1,72 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useReducer } from "react";
+import initialState from "../data/initialState";
+import rootReducer from "./reducers/rootReducer";
 import { loadData, saveData } from "../utils/localStorage";
 
 const AppContext = createContext();
 
 export function AppProvider({ children }) {
-  const [appData, setAppData] = useState(loadData);
+  const [appData, dispatch] = useReducer(
+  rootReducer,
+  undefined,
+  () => loadData() ?? initialState
+);
 
   useEffect(() => {
     saveData(appData);
   }, [appData]);
 
-  // ----------------------------
-  // Task Actions
-  // ----------------------------
-
   const addTask = (title) => {
-    const newTask = {
-      id: crypto.randomUUID(),
-      title,
-      completed: false,
-      createdAt: new Date().toISOString(),
-    };
-
-    setAppData((prev) => ({
-      ...prev,
-      tasks: [...prev.tasks, newTask],
-    }));
+    dispatch({
+      type: "ADD_TASK",
+      payload: {
+        id: crypto.randomUUID(),
+        title,
+        completed: false,
+        createdAt: new Date().toISOString(),
+      },
+    });
   };
 
   const toggleTask = (id) => {
-    setAppData((prev) => ({
-      ...prev,
-      tasks: prev.tasks.map((task) =>
-        task.id === id
-          ? {
-              ...task,
-              completed: !task.completed,
-            }
-          : task
-      ),
-    }));
+    dispatch({
+      type: "TOGGLE_TASK",
+      payload: id,
+    });
   };
 
   const deleteTask = (id) => {
-    setAppData((prev) => ({
-      ...prev,
-      tasks: prev.tasks.filter((task) => task.id !== id),
-    }));
+    dispatch({
+      type: "DELETE_TASK",
+      payload: id,
+    });
   };
+  const updateTask = (task) => {
+  dispatch({
+    type: "UPDATE_TASK",
+    payload: task,
+  });
+};
+
+const resetAppData = () => {
+  dispatch({
+    type: "RESET_APP",
+  });
+};
 
   return (
-    <AppContext.Provider
-      value={{
-        appData,
+   <AppContext.Provider
+  value={{
+    appData,
+    dispatch,
 
-        addTask,
-        toggleTask,
-        deleteTask,
-      }}
-    >
+    addTask,
+    updateTask,
+    toggleTask,
+    deleteTask,
+    resetAppData,
+  }}
+>
       {children}
     </AppContext.Provider>
   );

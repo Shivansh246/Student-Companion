@@ -413,3 +413,23 @@ img{
   border: 2px dashed #d1d5db;
   border-radius: 12px;
 }
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.summary-card {
+  text-align: center;
+}
+
+.summary-card h3 {
+  font-size: 1rem;
+  color: #6b7280;
+}
+
+.summary-card h2 {
+  margin-top: 10px;
+  font-size: 2rem;
+  color: #2563eb;
+}
