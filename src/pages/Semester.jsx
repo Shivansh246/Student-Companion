@@ -1,5 +1,7 @@
+import SemesterSection from "../features/semester/SemesterSection";
+
 function Semester() {
-  return <h1>Semester</h1>;
+  return <SemesterSection />;
 }
 
 export default Semester;

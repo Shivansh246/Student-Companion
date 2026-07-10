@@ -97,7 +97,30 @@ export function AppProvider({ children }) {
       },
     });
   };
+// ---------------- Semester ----------------
+  const addSemester = (semester) => {
+  dispatch({
+    type: "ADD_SEMESTER",
+    payload: {
+      id: crypto.randomUUID(),
+      ...semester,
+    },
+  });
+};
 
+const updateSemester = (semester) => {
+  dispatch({
+    type: "UPDATE_SEMESTER",
+    payload: semester,
+  });
+};
+
+const deleteSemester = (id) => {
+  dispatch({
+    type: "DELETE_SEMESTER",
+    payload: id,
+  });
+};
   // ---------------- Settings ----------------
 
   const resetAppData = () => {
@@ -122,7 +145,12 @@ export function AppProvider({ children }) {
         toggleGoal,
         deleteGoal,
 
+        addSemester,
+        updateSemester,
+        deleteSemester,
+        
         resetAppData,
+
       }}
     >
       {children}

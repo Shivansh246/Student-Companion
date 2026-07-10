@@ -1,0 +1,47 @@
+.semester-card {
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    transition: 0.2s;
+}
+
+.semester-card:hover {
+    transform: translateY(-2px);
+}
+
+.semester-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.semester-card__header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.semester-card__body {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.semester-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.semester-card__footer {
+    display: flex;
+    gap: 12px;
+    margin-top: auto;
+}
+
+.semester-card__footer button {
+    flex: 1;
+    cursor: pointer;
+}

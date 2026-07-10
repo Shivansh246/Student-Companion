@@ -10,8 +10,7 @@ const initialState = {
 
   semester: {
     currentSemester: "",
-    semesters: [],
-    subjects: [],
+    semesters: [],  
   },
 
   assignments: [],
