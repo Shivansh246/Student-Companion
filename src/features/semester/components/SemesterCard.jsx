@@ -1,6 +1,7 @@
 import "./SemesterCard.css";
 
-function SemesterCard({ semester }) {
+function SemesterCard({ semester,onEdit,
+  onDelete, }) {
   const totalCredits = semester.subjects.reduce(
     (sum, subject) => sum + Number(subject.credits || 0),
     0
@@ -31,8 +32,8 @@ function SemesterCard({ semester }) {
       </div>
 
       <div className="semester-card__footer">
-        <button>Edit</button>
-        <button>Delete</button>
+        <button onClick={onEdit}>Edit</button>
+        <button onClick={onDelete}>Delete</button>
       </div>
     </div>
   );

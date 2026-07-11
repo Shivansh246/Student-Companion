@@ -14,6 +14,7 @@ function SemesterSection() {
   appData,
   addSemester,
   updateSemester,
+  deleteSemester,
 } = useContext(AppContext);
 
   const [showForm, setShowForm] = useState(false);
@@ -73,6 +74,11 @@ function SemesterSection() {
             <SemesterCard
               key={semester.id}
               semester={semester}
+              onEdit={() => {
+                setEditingSemester(semester);
+                setShowForm(true);
+              }}
+              onDelete={() => deleteSemester(semester.id)}
             />
           ))}
         </div>

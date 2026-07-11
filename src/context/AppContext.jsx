@@ -104,6 +104,9 @@ export function AppProvider({ children }) {
     payload: {
       id: crypto.randomUUID(),
       ...semester,
+      subjects: [],
+      assignments: [],
+      exams: [],
     },
   });
 };
