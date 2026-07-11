@@ -31,6 +31,7 @@ function AppRoutes() {
                     <Route path="analytics" element={<Analytics />} />
 
                     <Route path="calculators" element={<Calculators />} />
+
                 </Route>
             </Routes>
         </BrowserRouter>

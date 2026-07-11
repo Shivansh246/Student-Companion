@@ -124,31 +124,7 @@ const deleteSemester = (id) => {
     payload: id,
   });
 };
-// ---------------- Assignments ----------------
 
-const addAssignment = (assignment) => {
-  dispatch({
-    type: "ADD_ASSIGNMENT",
-    payload: {
-      id: crypto.randomUUID(),
-      ...assignment,
-    },
-  });
-};
-
-const updateAssignment = (assignment) => {
-  dispatch({
-    type: "UPDATE_ASSIGNMENT",
-    payload: assignment,
-  });
-};
-
-const deleteAssignment = (id) => {
-  dispatch({
-    type: "DELETE_ASSIGNMENT",
-    payload: id,
-  });
-};
   // ---------------- Settings ----------------
 
   const resetAppData = () => {
@@ -176,11 +152,7 @@ const deleteAssignment = (id) => {
         addSemester,
         updateSemester,
         deleteSemester,
-        
-        addAssignment,
-        updateAssignment,
-        deleteAssignment,
-        
+
         resetAppData,
 
       }}
